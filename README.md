@@ -25,16 +25,13 @@
 - Bryan Keller [Gtihub](https://github.com/kcbryan10)
     
 ## Technologies
-- bcrypt [source](https://www.npmjs.com/package/bcrypt)
-- sequelize [source](https://sequelize.org/)
-- dotenv [source](https://www.npmjs.com/package/dotenv)
+- React [source](https://reactjs.org/)
+- GraphQl [source](https://graphql.org/)
+- MongoDb [source](https://www.mongodb.com/)
 - express [source](https://expressjs.com/)
 - sass [source](https://sass-lang.com/)
 - node [source](https://nodejs.org/en/)
-- mysql2 [source](https://www.mysql.com/)
 - nodemon [source](https://www.npmjs.com/package/nodemon)
-- express session [source](https://www.npmjs.com/package/express-session)
-- connect session sequelize [source](https://www.npmjs.com/package/connect-session-sequelize)
 
     
 ## License
