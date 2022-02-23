@@ -19,8 +19,8 @@
 ## Usage
 
 ## Collaborators
-- Jeramy Sena [Gtihub](https://github.com/kcbryan10)
-- Djamel Ramdani [Gtihub](https://github.com/kcbryan10)
+- Jeramy Sena [Gtihub](https://github.com/JeramySena)
+- Djamel Ramdani [Gtihub]()
 - Justin Eicher [Github](https://github.com/Justin-Eicher)
 - Bryan Keller [Gtihub](https://github.com/kcbryan10)
     
