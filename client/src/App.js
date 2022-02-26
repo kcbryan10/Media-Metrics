@@ -12,3 +12,18 @@ import MoviePage from './pages/Movie';
 import MusicPage from './pages/Music';
 import Login from './pages/Login';
 import SignUp from './pages/Signup'
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { Header }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
