@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReactionForm = () => {  
+const FriendList = () => {  
   return (
     <main>
       <div/>
@@ -8,4 +8,4 @@ const ReactionForm = () => {
   );
 };
 
-export default ReactionForm;
+export default FriendList;
