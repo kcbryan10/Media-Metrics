@@ -45,7 +45,7 @@ const Signup = () => {
               <div>
               <input
                 className="form-input"
-                placeholder="Your username"
+                placeholder="Username"
                 name="username"
                 type="username"
                 id="username"
@@ -56,7 +56,7 @@ const Signup = () => {
               <div>
               <input
                 className="form-input"
-                placeholder="Your email"
+                placeholder="Email Address"
                 name="email"
                 type="email"
                 id="email"

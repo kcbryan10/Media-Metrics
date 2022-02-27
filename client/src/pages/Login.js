@@ -46,7 +46,7 @@ const Login = (props) => {
               <div>
               <input
                 className="form-input"
-                placeholder="Your email"
+                placeholder="Email Address"
                 name="email"
                 type="email"
                 id="email"
