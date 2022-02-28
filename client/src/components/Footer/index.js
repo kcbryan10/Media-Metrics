@@ -65,10 +65,10 @@ function Footer() {
         align={'center'}>
         <Logo />
         <Stack direction={'row'} spacing={6}>
-          <Link href={'#'}>Home</Link>
-          <Link href={'#'}>Music</Link>
-          <Link href={'#'}>Movies</Link>
-          <Link href={'#'}>Video Games</Link>
+          <Link href={'/'}>Home</Link>
+          <Link href={'/music'}>Music</Link>
+          <Link href={'/movie'}>Movies</Link>
+          <Link href={'/game'}>Video Games</Link>
         </Stack>
       </Container>
 
