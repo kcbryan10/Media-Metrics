@@ -14,7 +14,25 @@ const Music = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-   <div></div>
+    <main>
+    <div>
+      {loggedIn && (
+        <div>
+          <ThoughtForm />
+        </div>
+      )}
+      <div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <ThoughtList
+            thoughts={thoughts}
+            title="Thought List"
+          />
+        )}
+      </div>
+    </div>
+  </main>
   );
 };
 
