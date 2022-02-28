@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { ChakraProvider } from '@chakra-ui/react'
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,13 +12,14 @@ import GamePage from './pages/Game';
 import MoviePage from './pages/Movie';
 import MusicPage from './pages/Music';
 import Login from './pages/Login';
-import SignUp from './pages/Signup'
+import SignUp from './pages/Signup';
+import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-const authLink = setContext((_, { Header }) => {
+const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
     headers: {
@@ -36,6 +38,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+      <ChakraProvider>
         <div>
           <Header />
           <div>
@@ -51,9 +54,10 @@ function App() {
           </div>
           <Footer />
         </div>
+        </ChakraProvider>
       </Router>
     </ApolloProvider>
   )
 }
 
-export default App();
+export default App;
