@@ -5,19 +5,19 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-
 import Home from './pages/Home';
-import GamePage from './pages/Game';
-import MoviePage from './pages/Movie';
-import MusicPage from './pages/Music';
 import Login from './pages/Login';
-import SignUp from './pages/Signup'
+import NoMatch from './pages/NoMatch';
+import Signup from './pages/Signup';
+import Movie from './pages/Movie';
+import Game from './pages/Game';
+import Music from './pages/Music';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-const authLink = setContext((_, { Header }) => {
+const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
     headers: {
@@ -29,7 +29,7 @@ const authLink = setContext((_, { Header }) => {
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 function App() {
@@ -41,11 +41,12 @@ function App() {
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/movie" component={MoviePage} />
-              <Route exact path="/game" component={GamePage} />
-              <Route exact path="/music" component={MusicPage} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/movie" component={Movie}/>
+              <Route exact path="/game" component={Game}/>
+              <Route exact path="/music" component={Music}/>
+
               <Route component={NoMatch} />
             </Switch>
           </div>
@@ -53,7 +54,7 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-  )
+  );
 }
 
-export default App();
+export default App;
