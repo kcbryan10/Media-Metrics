@@ -79,6 +79,7 @@ const Header = () => {
             Sign In
           </Button>
           <Button
+            as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
             as={'a'}
             fontSize={'sm'}
