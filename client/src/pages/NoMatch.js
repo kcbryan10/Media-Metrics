@@ -1,10 +1,10 @@
 import React from 'react';
 
-const NoMatch = () => {  
+const NoMatch = () => {
   return (
-    <main>
-      <div/>
-    </main>
+    <div>
+      Oops, we couldn't find that page.
+    </div>
   );
 };
 
