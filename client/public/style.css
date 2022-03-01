@@ -15,69 +15,153 @@
    }
 
    .content {
-       padding: 400px;
+       padding-top: 50px;
+       padding-bottom: 300px;
    }
+
+   section {
+    padding: 60px;
+  }
+
+  :root {
+    --primary-color: gray;
+    --secondary-color: pink;
+    --tertiary-color: white;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    color: var(--tertiary-color);
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  
 
 /* homepage styling */
 
-.homepage {
-    background-image: url('./images/videogame-background.jpg');
-    background-size: cover;
-}
-
-.gamepage {
-    background: url('./images/videogame-background.jpg');
-    background-size: cover;
-}
-
-.musicpage {
-    background-image: url('./images/music-background.jpg');
-    background-size: cover;
-}
-
-.moviepage {
-    background-image: url('./images/movie-background.jpg');
-    background-size: cover;
-}
-
-.homepage-content {
- margin: 10px;
- color: #fff;
- padding-top: 50px;
- padding-bottom: 200px;
-}
-
-.homepage-content h4 {
+.section-title {
+    font-size: 48px;
+    border-bottom: 3px solid;
+    color: var(--secondary-color);
+    padding-bottom: 20px;
     text-align: center;
-    font-size: 36px;
-}
+    margin: 0 auto 35px auto;
+    width: 50%;
+  }
+  
+  .primary-border {
+    border-color: var(--primary-color);
+  }
+  
+  .secondary-border {
+    border-color: var(--tertiary-color);
+  }
 
-.homepage-titles {
-    border: black;
-    border-style: solid;
-    margin: 15px;
-    background-color: pink;
-}
-
-.homepage-desc {
-    background-color: gray;
-    border-style: solid;
-    border-color: black;
-    color: white;
-    font-size: large;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-style: solid;
-    border-color: black;
-}
-
-.home-text {
-    margin: 20px;
+  .intro p {
+    line-height: 1.7;
+    color: var(--tertiary-color);
+    width: 80%;
+    margin: 0 auto;
     font-size: 20px;
-}
+    text-align: center;
+  }
 
+  .steps { 
+    background: var(--primary-color);
+  }
+  
+  .step {
+    margin: 50px auto;
+    padding-bottom: 50px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .step:last-child {
+    border-bottom: none;
+  }
+  
+  .step h3 {
+    color: var(--secondary-color);
+    font-size: 46px;
+    flex: 1 30%;
+  }
+  
+  .step-info {
+    flex: 2 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .step-img {
+    flex: 1 12%;
+    margin-right: 20px;
+  }
+  
+  .step-img img {
+    max-width: 100%;
+  }
+  
+  .step-text {
+    flex: 12;
+  }
+  
+  .step-text p {
+    color: var(--tertiary-color);
+    font-size: 18px;
+  }
+  
+  .step-text h4 {
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--secondary-color);
+  }
+  .trainers {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .trainer {
+    margin: 20px;
+    flex: 1;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+  }
+  
+  .trainer img {
+    width: 100%;
+  }
+  
+  .trainer-bio {
+    padding: 25px;
+    line-height: 1.3;
+  }
+  
+  .trainer-bio h3 {
+    font-size: 28px;
+  }
+  
+  .trainer-bio h4 {
+    font-weight: lighter;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .trainer-bio p {
+    font-size: 17px;
+  }
 /*login-signup styling*/
 
 .links {
@@ -123,4 +207,59 @@
 .submit-button:hover {
     color:white;
     background-color:gray;
+}
+
+/* page styling */
+
+.gamepage {
+    background: url('./images/videogame-background.jpg');
+    background-size: cover;
+}
+
+.musicpage {
+    background-image: url('./images/music-background.jpg');
+    background-size: cover;
+}
+
+.moviepage {
+    background-image: url('./images/movie-background.jpg');
+    background-size: cover;
+}
+
+.blog-input {
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+  color: black;
+}
+.blog-form {
+  text-align: center;
+}
+
+.blog-button {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin: 10px;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:black;
+  background-color: gray;
+  text-align:center;
+  transition: all 0.2s; 
+}
+
+.no-thoughts {
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+}
+
+.went-wrong {
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
 }
