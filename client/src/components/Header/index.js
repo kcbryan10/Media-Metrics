@@ -79,8 +79,8 @@ const Header = () => {
             Sign In
           </Button>
           <Button
-            as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
+            as={'a'}
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
@@ -247,30 +247,19 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: 'Home',
-    href: '#',
+    href: '/',
   },
   {
     label: 'Music',
-    children: [
-      {
-        label: 'POP',
-        subLabel: 'Find your dream music pop',
-        href: '#',
-      },
-      {
-        label: 'Rocks',
-        subLabel: 'An exclusive list for rocks music',
-        href: '#',
-      },
-    ],
+    href:'/music'
   },
   {
     label: 'Movies',
-    href: '#',
+    href: '/movie',
   },
   {
     label: 'Video Games',
-    href: '#',
+    href: '/game',
   },
 ];
 
