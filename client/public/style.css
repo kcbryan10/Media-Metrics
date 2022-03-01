@@ -162,6 +162,10 @@
   .developer-bio p {
     font-size: 17px;
   }
+
+  .git-link {
+    color:  blue;
+  }
 /*login-signup styling*/
 
 .links {
@@ -211,19 +215,34 @@
 
 /* page styling */
 
+.page-title {
+  color: white;
+  background-color: gray;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin: 30px;
+  text-align: center;
+  font-size: 36px;
+  padding: 20px;
+  border-radius: 25px;
+}
+
 .gamepage {
     background: url('./images/videogame-background.jpg');
     background-size: cover;
+    padding: 10px;
 }
 
 .musicpage {
     background-image: url('./images/music-background.jpg');
     background-size: cover;
+    padding: 10px;
 }
 
 .moviepage {
     background-image: url('./images/movie-background.jpg');
     background-size: cover;
+    padding: 10px;
 }
 
 .blog-input {

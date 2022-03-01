@@ -13,25 +13,30 @@ const Movie = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-    <main className='moviepage'>
-    <div className='content'>
-      {loggedIn && (
-        <div>
-          <ThoughtForm />
+    <main>
+      <div className='moviepage'>
+        <div class="page-title">
+          Movies!
         </div>
-      )}
-      <div>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <ThoughtList
-            thoughts={thoughts}
-            title="Thought List"
-          />
-        )}
+        <div className='content'>
+          {loggedIn && (
+            <div>
+              <ThoughtForm />
+            </div>
+          )}
+          <div>
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <ThoughtList
+                thoughts={thoughts}
+                title="Thought List"
+              />
+            )}
+          </div>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
   );
 };
 

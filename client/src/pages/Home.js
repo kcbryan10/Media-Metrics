@@ -52,6 +52,7 @@ const Home = () => {
             <h3 className="developer-name">Bryan Keller</h3>
             <h4 className="developer-role">FrontEnd</h4>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi quo cupiditate commodi saepe culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit amet quis repellat!</p>
+            <a className='git-link' href='https://github.com/kcbryan10' target="_blank">Github</a>
           </div>
         </article>
 
@@ -60,14 +61,16 @@ const Home = () => {
             <h3 className="developer-name">Justin Eicher</h3>
             <h4 className="developer-role">BackEnd</h4>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi quo cupiditate commodi saepe culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit amet quis repellat!</p>
+            <a className='git-link' href='https://github.com/Justin-Eicher' target="_blank">Github</a>
           </div>
         </article>
 
         <article className="developer">
           <div className="developer-bio">
-            <h3 className="developer-name">Jeramy</h3>
+            <h3 className="developer-name">Jeramy Sena</h3>
             <h4 className="developer-role">BackEnd</h4>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi quo cupiditate commodi saepe culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit amet quis repellat!</p>
+            <a className='git-link' href='https://github.com/JeramySena' target="_blank">Github</a>
             </div>
           </article>
 
@@ -76,6 +79,7 @@ const Home = () => {
             <h3 className="developer-name">Djamel Ramdani</h3>
             <h4 className="developer-role">FrontEnd</h4>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi quo cupiditate commodi saepe culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit amet quis repellat!</p>
+            <a className='git-link' href='https://github.com/scorpiondz1999' target="_blank">Github</a>
           </div>
         </article>
       </div>
