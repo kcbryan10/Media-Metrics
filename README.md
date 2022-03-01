@@ -17,6 +17,10 @@
 - view website at Localhost:3001 in web browser
     
 ## Usage
+-
+-
+-
+-
 
 ## Collaborators
 - Jeramy Sena [Gtihub](https://github.com/JeramySena)
@@ -26,6 +30,8 @@
     
 ## Technologies
 - React [source](https://reactjs.org/)
+- Chakra [source](https://chakra-ui.com/)
+- Java Web tokens [source](https://jwt.io/)
 - GraphQl [source](https://graphql.org/)
 - MongoDb [source](https://www.mongodb.com/)
 - express [source](https://expressjs.com/)
