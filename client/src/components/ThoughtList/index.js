@@ -8,10 +8,10 @@ const ThoughtList = ({ thoughts, title }) => {
 
   return (
     <div>
-      <h3>{title}</h3>
+      <h3 className='went-wrong'>{title}</h3>
       {thoughts &&
         thoughts.map(thought => (
-          <div key={thought._id}>
+          <div className='thoughts' key={thought._id}>
             <p>
               <Link
                 to={`/profile/${thought.username}`}
@@ -20,7 +20,7 @@ const ThoughtList = ({ thoughts, title }) => {
                 {thought.username}
               </Link>{' '}
             </p>
-            <div>
+            <div className='text'>
               <Link to={`/thought/${thought._id}`}>
                 <p>{thought.thoughtText}</p>
                 <p>

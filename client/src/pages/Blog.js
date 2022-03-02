@@ -14,9 +14,9 @@ const Music = () => {
 
   return (
     <main>
-      <div className='musicpage'>
-        <div class="page-title">
-          Music!
+      <div className='gamepage'>
+        <div className="page-title">
+          Music Movies Games!
         </div>
         <div className='content'>
         {loggedIn && (

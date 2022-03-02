@@ -48,19 +48,19 @@ const ThoughtForm = () => {
     } catch (e) {
       console.error(e);
     }
+
+    window.location.reload();
+
   };
 
   return (
     <div>
-          <p>
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
       <form
         className="blog-form"
+        onSubmit={handleFormSubmit}
       >
         <div>
         <textarea
-          onSubmit={handleFormSubmit}
           placeholder="Blog about it"
           value={thoughtText}
           className="blog-input"
