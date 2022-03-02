@@ -1,14 +1,14 @@
 import React from 'react';
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import MusicThoughtList from '../components/MusicThoughtList';
+import MusicThoughtForm from '../components/MusicThoughtForm';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_MUSIC_THOUGHTS } from '../utils/queries';
 
 const Music = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
+  const { loading, data } = useQuery(QUERY_MUSIC_THOUGHTS);
+  const musicThoughts = data?.musicThoughts || [];
 
   const loggedIn = Auth.loggedIn();
 
@@ -21,15 +21,15 @@ const Music = () => {
         <div className='content'>
         {loggedIn && (
             <div>
-              <ThoughtForm />
+              <MusicThoughtForm />
             </div>
           )}
           <div>
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <ThoughtList
-                thoughts={thoughts}
+              <MusicThoughtList
+                musicThoughts={musicThoughts}
                 title="Thought List"
               />
             )}
