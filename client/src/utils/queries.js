@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_GAME_THOUGHT = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
+  query gameThought($id: ID!) {
+    gameThought(_id: $id) {
       _id
       thoughtText
       createdAt
@@ -19,8 +19,8 @@ export const QUERY_GAME_THOUGHT = gql`
 `;
 
 export const QUERY_MOVIE_THOUGHT = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
+  query movieThought($id: ID!) {
+    movieThought(_id: $id) {
       _id
       thoughtText
       createdAt
@@ -37,8 +37,8 @@ export const QUERY_MOVIE_THOUGHT = gql`
 `;
 
 export const QUERY_MUSIC_THOUGHT = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
+  query musicThought($id: ID!) {
+    musicThought(_id: $id) {
       _id
       thoughtText
       createdAt
@@ -55,8 +55,8 @@ export const QUERY_MUSIC_THOUGHT = gql`
 `;
 
 export const QUERY_GAME_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+  query gameThoughts($username: String) {
+    gameThoughts(username: $username) {
       _id
       thoughtText
       createdAt
@@ -73,8 +73,8 @@ export const QUERY_GAME_THOUGHTS = gql`
 `;
 
 export const QUERY_MOVIE_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+  query movieThoughts($username: String) {
+    movieThoughts(username: $username) {
       _id
       thoughtText
       createdAt
@@ -91,8 +91,8 @@ export const QUERY_MOVIE_THOUGHTS = gql`
 `;
 
 export const QUERY_MUSIC_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+  query musicThoughts($username: String) {
+    musicThoughts(username: $username) {
       _id
       thoughtText
       createdAt

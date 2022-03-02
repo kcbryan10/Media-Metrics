@@ -21,7 +21,7 @@ const MovieThoughtList = ({ movieThoughts, title }) => {
               </Link>{' '}
             </p>
             <div>
-              <Link to={`/thought/${movieThought._id}`}>
+              <Link to={`/movieThought/${movieThought._id}`}>
                 <p>{movieThought.thoughtText}</p>
                 <p>
                   Comments: {movieThought.reactionCount} || Click to{' '}

@@ -15,18 +15,26 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("thoughts");
+          .populate("gameThoughts")
+          .populate("movieThoughts")
+          .populate("musicThoughts");
 
         return userData;
       }
     },
     users: async () => {
-      return User.find().select("-__v -password").populate("thoughts");
+      return User.find()
+        .select("-__v -password")
+        .populate("gameThoughts")
+        .populate("movieThoughts")
+        .populate("musicThoughts");
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
-        .populate("thoughts");
+        .populate("gameThoughts")
+        .populate("movieThoughts")
+        .populate("musicThoughts");
     },
     gameThoughts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -76,14 +84,14 @@ const resolvers = {
     },
     addGameThought: async (parent, args, context) => {
       if (context.user) {
-        const thought = await GameComment.create({
+        const gameThought = await GameComment.create({
           ...args,
           username: context.user.username,
         });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { thoughts: thought._id } },
+          { $push: { gameThoughts: gameThought._id } },
           { new: true }
         );
 
@@ -94,14 +102,14 @@ const resolvers = {
     },
     addMovieThought: async (parent, args, context) => {
       if (context.user) {
-        const thought = await MovieComment.create({
+        const movieThought = await MovieComment.create({
           ...args,
           username: context.user.username,
         });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { thoughts: thought._id } },
+          { $push: { movieThoughts: movieThought._id } },
           { new: true }
         );
 
@@ -112,14 +120,14 @@ const resolvers = {
     },
     addMusicThought: async (parent, args, context) => {
       if (context.user) {
-        const thought = await MusicComment.create({
+        const musicThought = await MusicComment.create({
           ...args,
           username: context.user.username,
         });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { thoughts: thought._id } },
+          { $push: { musicThoughts: musicThought._id } },
           { new: true }
         );
 

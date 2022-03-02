@@ -21,7 +21,7 @@ const MusicThoughtList = ({ musicThoughts, title }) => {
               </Link>{' '}
             </p>
             <div>
-              <Link to={`/thought/${musicThought._id}`}>
+              <Link to={`/musicThought/${musicThought._id}`}>
                 <p>{musicThought.thoughtText}</p>
                 <p>
                   Comments: {musicThought.reactionCount} || Click to{' '}

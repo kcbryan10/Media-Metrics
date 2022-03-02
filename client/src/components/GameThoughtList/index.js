@@ -21,7 +21,7 @@ const GameThoughtList = ({ gameThoughts, title }) => {
               </Link>{' '}
             </p>
             <div>
-              <Link to={`/thought/${gameThought._id}`}>
+              <Link to={`/gameThought/${gameThought._id}`}>
                 <p>{gameThought.thoughtText}</p>
                 <p>
                   Comments: {gameThought.reactionCount} || Click to{' '}

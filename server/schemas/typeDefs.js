@@ -56,23 +56,11 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     gameThoughts(username: String): [gameThought]   
-    gameThought(_id: ID!): gameThought    
-  }
-
-  type Query {
-    me: User
-    users: [User]
-    user(username: String!): User    
+    gameThought(_id: ID!): gameThought
     movieThoughts(username: String): [movieThought]    
-    movieThought(_id: ID!): musicThought    
-  }
-
-  type Query {
-    me: User
-    users: [User]
-    user(username: String!): User    
+    movieThought(_id: ID!): musicThought
     musicThoughts(username: String): [musicThought]    
-    musicThought(_id: ID!): musicThought
+    musicThought(_id: ID!): musicThought       
   }
 
   type Mutation {
