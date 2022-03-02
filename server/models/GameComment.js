@@ -32,6 +32,6 @@ gameCommentSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
 
-const GameComment = model('Game Comment', gameCommentSchema);
+const GameComment = model('GameComment', gameCommentSchema);
 
 module.exports = GameComment;

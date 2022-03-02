@@ -79,21 +79,9 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addGameThought(thoughtText: String!): gameThought    
-    addReaction(thoughtId: ID!, reactionBody: String!): gameThought
-  }
-
-  type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth    
-    addMovieThought(thoughtText: String!): movieThought   
-    addReaction(thoughtId: ID!, reactionBody: String!): movieThought
-  }
-
-  type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth    
+    addMovieThought(movieThoughtText: String!): movieThought   
     addMusicThought(thoughtText: String!): musicThought
-    addReaction(thoughtId: ID!, reactionBody: String!): musicThought
+    addReaction(thoughtId: ID!, reactionBody: String!): movieThought  
   }
 `;
 

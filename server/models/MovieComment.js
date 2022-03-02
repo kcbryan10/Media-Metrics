@@ -32,6 +32,6 @@ movieCommentSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
 
-const MovieComment = model('Movie Comment', movieCommentSchema);
+const MovieComment = model('MovieComment', movieCommentSchema);
 
 module.exports = MovieComment;

@@ -32,6 +32,6 @@ musicCommentSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
 
-const MusicComment = model('Music Comment', musicCommentSchema);
+const MusicComment = model('MusicComment', musicCommentSchema);
 
 module.exports = MusicComment;
