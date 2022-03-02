@@ -1,14 +1,14 @@
 import React from 'react';
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import GameThoughtList from '../components/GameThoughtList';
+import GameThoughtForm from '../components/GameThoughtForm';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_GAME_THOUGHTS } from '../utils/queries';
 
 const Game = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
+  const { loading, data } = useQuery(QUERY_GAME_THOUGHTS);
+  const gameThoughts = data?.gameThoughts || [];
 
   const loggedIn = Auth.loggedIn();
 
@@ -21,15 +21,15 @@ const Game = () => {
         <div className='content'>
           {loggedIn && (
             <div>
-              <ThoughtForm />
+              <GameThoughtForm />
             </div>
           )}
           <div>
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <ThoughtList
-                thoughts={thoughts}
+              <GameThoughtList
+                gameThoughts={gameThoughts}
                 title="Thought List"
               />
             )}

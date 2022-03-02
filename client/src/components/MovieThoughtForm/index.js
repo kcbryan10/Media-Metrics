@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_ME, QUERY_THOUGHTS } from '../../utils/queries';
+import { ADD_MOVIE_THOUGHT } from '../../utils/mutations';
+import { QUERY_ME, QUERY_MOVIE_THOUGHTS } from '../../utils/queries';
 
-const ThoughtForm = () => {
+const MovieThoughtForm = () => {
   const [thoughtText, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
-    update(cache, { data: { addThought } }) {
+  const [addMovieThought, { error }] = useMutation(ADD_MOVIE_THOUGHT, {
+    update(cache, { data: { addMovieThought } }) {
       try {
-        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { movieThoughts } = cache.readQuery({ query: QUERY_MOVIE_THOUGHTS });
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
-          data: { thoughts: [addThought, ...thoughts] },
+          query: QUERY_MOVIE_THOUGHTS,
+          data: { thoughts: [addMovieThought, ...movieThoughts] },
         });
       } catch (e) {
         console.error(e);
@@ -23,7 +23,7 @@ const ThoughtForm = () => {
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
+        data: { me: { ...me, movieThoughts: [...me.movieThoughts, addMovieThought] } },
       });
     },
   });
@@ -39,7 +39,7 @@ const ThoughtForm = () => {
     event.preventDefault();
     console.log(event.target.value)
     try {
-      await addThought({
+      await addMovieThought({
         variables: { thoughtText },
       });
 
@@ -75,4 +75,4 @@ const ThoughtForm = () => {
   );
 };
 
-export default ThoughtForm;
+export default MovieThoughtForm;

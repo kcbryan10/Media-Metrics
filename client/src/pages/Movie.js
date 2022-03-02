@@ -1,14 +1,14 @@
 import React from 'react';
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import MovieThoughtList from '../components/MovieThoughtList';
+import MovieThoughtForm from '../components/MovieThoughtForm';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_MOVIE_THOUGHTS } from '../utils/queries';
 
 const Movie = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
+  const { loading, data } = useQuery(QUERY_MOVIE_THOUGHTS);
+  const movieThoughts = data?.movieThoughts || [];
 
   const loggedIn = Auth.loggedIn();
 
@@ -21,15 +21,15 @@ const Movie = () => {
         <div className='content'>
           {loggedIn && (
             <div>
-              <ThoughtForm />
+              <MovieThoughtForm />
             </div>
           )}
           <div>
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <ThoughtList
-                thoughts={thoughts}
+              <MovieThoughtList
+                movieThoughts={movieThoughts}
                 title="Thought List"
               />
             )}
