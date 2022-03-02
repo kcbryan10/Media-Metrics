@@ -13,23 +13,30 @@ const Music = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-    <main className='musicpage'>
-    <div className='content'>
-          <div>
-          <ThoughtForm />
+    <main>
+      <div className='musicpage'>
+        <div class="page-title">
+          Music!
         </div>
-    
-      <div>
-          <div>Loading...</div>
-  
-          <ThoughtList
-            thoughts={thoughts}
-            title="Thought List"
-          />
-  
+        <div className='content'>
+        {loggedIn && (
+            <div>
+              <ThoughtForm />
+            </div>
+          )}
+          <div>
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <ThoughtList
+                thoughts={thoughts}
+                title="Thought List"
+              />
+            )}
+          </div>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
   );
 };
 

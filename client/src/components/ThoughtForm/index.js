@@ -53,7 +53,7 @@ const ThoughtForm = () => {
   return (
     <div>
       <p>
-        {error && <span className='went-wrong'>Cant post this blog!</span>}
+        {error && <span className='went-wrong'>A Problem Has Occured!</span>}
       </p>
       <form
         className="blog-form"
