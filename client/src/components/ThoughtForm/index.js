@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
 import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { QUERY_ME, QUERY_THOUGHTS } from '../../utils/queries';
 
 const ThoughtForm = () => {
   const [thoughtText, setText] = useState('');
@@ -37,7 +37,7 @@ const ThoughtForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(event.target.value)
     try {
       await addThought({
         variables: { thoughtText },
@@ -52,15 +52,15 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <p>
-        {error && <span className='went-wrong'>A Problem Has Occured!</span>}
+          <p>
+        {error && <span className="ml-2">Something went wrong...</span>}
       </p>
       <form
         className="blog-form"
-        onSubmit={handleFormSubmit}
       >
         <div>
         <textarea
+          onSubmit={handleFormSubmit}
           placeholder="Blog about it"
           value={thoughtText}
           className="blog-input"

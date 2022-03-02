@@ -26,8 +26,17 @@ import {
 
 import logo from '../../assets/logo.png'
 
-const Header = () => {  
+import Auth from '../../utils/auth';
+
+const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
+
+  const loggedIn = Auth.loggedIn();
+
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
     <Box>
@@ -55,10 +64,10 @@ const Header = () => {
           />
         </Flex>
         <Image
-            src={logo}
-            htmlHeight={20}
-            htmlWidth={80}          
-          />
+          src={logo}
+          htmlHeight={20}
+          htmlWidth={80}
+        />
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -70,27 +79,41 @@ const Header = () => {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button
+          {!loggedIn && (
+            <Button
+              as={'a'}
+              fontSize={'sm'}
+              fontWeight={400}
+              variant={'link'}
+              href={'/login'}>
+              Sign In
+            </Button>
+          )}
+          {!loggedIn && (
+            <Button
+              display={{ base: 'none', md: 'inline-flex' }}
+              as={'a'}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'pink.400'}
+              href={'/signup'}
+              _hover={{
+                bg: 'pink.300',
+              }}>
+              Sign Up
+            </Button>
+          )}
+          {loggedIn && (
+            <Button
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'/login'}>
-            Sign In
+            onClick={logout}>
+            Sign out
           </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'/signup'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
-            Sign Up
-          </Button>
+          )}
         </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity>
@@ -251,7 +274,7 @@ const NAV_ITEMS = [
   },
   {
     label: 'Music',
-    href:'/music'
+    href: '/music'
   },
   {
     label: 'Movies',

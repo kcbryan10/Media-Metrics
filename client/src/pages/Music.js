@@ -4,10 +4,10 @@ import ThoughtForm from '../components/ThoughtForm';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHT } from '../utils/queries';
+import { QUERY_THOUGHTS } from '../utils/queries';
 
 const Music = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHT);
+  const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
 
   const loggedIn = Auth.loggedIn();
