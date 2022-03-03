@@ -8,9 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
-import GamePage from './pages/Game';
-import MoviePage from './pages/Movie';
-import MusicPage from './pages/Music';
+import BlogPage from './pages/Blog';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
 import NoMatch from './pages/NoMatch';
@@ -44,9 +42,7 @@ function App() {
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/movie" component={MoviePage} />
-              <Route exact path="/game" component={GamePage} />
-              <Route exact path="/music" component={MusicPage} />
+              <Route exact path="/blog" component={BlogPage} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
               <Route component={NoMatch} />

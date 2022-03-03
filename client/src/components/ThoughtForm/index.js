@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { ADD_MOVIE_THOUGHT } from '../../utils/mutations';
-import { QUERY_ME, QUERY_MOVIE_THOUGHTS } from '../../utils/queries';
+import { ADD_THOUGHT } from '../../utils/mutations';
+import { QUERY_ME, QUERY_THOUGHTS } from '../../utils/queries';
 
-const MovieThoughtForm = () => {
+const ThoughtForm = () => {
   const [thoughtText, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addMovieThought, { error }] = useMutation(ADD_MOVIE_THOUGHT, {
-    update(cache, { data: { addMovieThought } }) {
+  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
+    update(cache, { data: { addThought } }) {
       try {
-        const { movieThoughts } = cache.readQuery({ query: QUERY_MOVIE_THOUGHTS });
+        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
         cache.writeQuery({
-          query: QUERY_MOVIE_THOUGHTS,
-          data: { thoughts: [addMovieThought, ...movieThoughts] },
+          query: QUERY_THOUGHTS,
+          data: { thoughts: [addThought, ...thoughts] },
         });
       } catch (e) {
         console.error(e);
@@ -23,7 +23,7 @@ const MovieThoughtForm = () => {
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, movieThoughts: [...me.movieThoughts, addMovieThought] } },
+        data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
       });
     },
   });
@@ -39,7 +39,7 @@ const MovieThoughtForm = () => {
     event.preventDefault();
     console.log(event.target.value)
     try {
-      await addMovieThought({
+      await addThought({
         variables: { thoughtText },
       });
 
@@ -48,19 +48,19 @@ const MovieThoughtForm = () => {
     } catch (e) {
       console.error(e);
     }
+
+    window.location.reload();
+
   };
 
   return (
     <div>
-          <p>
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
       <form
         className="blog-form"
+        onSubmit={handleFormSubmit}
       >
         <div>
         <textarea
-          onSubmit={handleFormSubmit}
           placeholder="Blog about it"
           value={thoughtText}
           className="blog-input"
@@ -75,4 +75,4 @@ const MovieThoughtForm = () => {
   );
 };
 
-export default MovieThoughtForm;
+export default ThoughtForm;

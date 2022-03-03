@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_GAME_THOUGHT = gql`
-  query gameThought($id: ID!) {
-    gameThought(_id: $id) {
+export const QUERY_THOUGHT = gql`
+  query thought($id: ID!) {
+    thought(_id: $id) {
       _id
       thoughtText
       createdAt
@@ -18,81 +18,9 @@ export const QUERY_GAME_THOUGHT = gql`
   }
 `;
 
-export const QUERY_MOVIE_THOUGHT = gql`
-  query movieThought($id: ID!) {
-    movieThought(_id: $id) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
-    }
-  }
-`;
-
-export const QUERY_MUSIC_THOUGHT = gql`
-  query musicThought($id: ID!) {
-    musicThought(_id: $id) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
-    }
-  }
-`;
-
-export const QUERY_GAME_THOUGHTS = gql`
-  query gameThoughts($username: String) {
-    gameThoughts(username: $username) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
-    }
-  }
-`;
-
-export const QUERY_MOVIE_THOUGHTS = gql`
-  query movieThoughts($username: String) {
-    movieThoughts(username: $username) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
-    }
-  }
-`;
-
-export const QUERY_MUSIC_THOUGHTS = gql`
-  query musicThoughts($username: String) {
-    musicThoughts(username: $username) {
+export const QUERY_THOUGHTS = gql`
+  query thoughts($username: String) {
+    thoughts(username: $username) {
       _id
       thoughtText
       createdAt

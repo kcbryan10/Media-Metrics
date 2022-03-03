@@ -1,35 +1,35 @@
 import React from 'react';
-import GameThoughtList from '../components/GameThoughtList';
-import GameThoughtForm from '../components/GameThoughtForm';
+import ThoughtList from '../components/ThoughtList';
+import ThoughtForm from '../components/ThoughtForm';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_GAME_THOUGHTS } from '../utils/queries';
+import { QUERY_THOUGHTS } from '../utils/queries';
 
-const Game = () => {
-  const { loading, data } = useQuery(QUERY_GAME_THOUGHTS);
-  const gameThoughts = data?.gameThoughts || [];
+const Music = () => {
+  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const thoughts = data?.thoughts || [];
 
   const loggedIn = Auth.loggedIn();
 
   return (
     <main>
       <div className='gamepage'>
-        <div class="page-title">
-          Video Games!
+        <div className="page-title">
+          Music Movies Games!
         </div>
         <div className='content'>
-          {loggedIn && (
+        {loggedIn && (
             <div>
-              <GameThoughtForm />
+              <ThoughtForm />
             </div>
           )}
           <div>
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <GameThoughtList
-                gameThoughts={gameThoughts}
+              <ThoughtList
+                thoughts={thoughts}
                 title="Thought List"
               />
             )}
@@ -40,4 +40,4 @@ const Game = () => {
   );
 };
 
-export default Game;
+export default Music;

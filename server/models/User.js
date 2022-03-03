@@ -23,9 +23,7 @@ const userSchema = new Schema(
     comments: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Game Comment',
-        ref: 'Movie Comment',
-        ref: 'Music Comment'
+        ref: 'Comment'
       }
     ],
   },

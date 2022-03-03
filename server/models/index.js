@@ -1,6 +1,4 @@
 const User = require('./User');
-const GameComment = require('./GameComment');
-const MovieComment = require('./MovieComment');
-const MusicComment = require('./MusicComment');
+const Comment = require('./Comment');
 
-module.exports = { User, GameComment, MovieComment, MusicComment };
+module.exports = { User, Comment };

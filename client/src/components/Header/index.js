@@ -273,17 +273,9 @@ const NAV_ITEMS = [
     href: '/',
   },
   {
-    label: 'Music',
-    href: '/music'
-  },
-  {
-    label: 'Movies',
-    href: '/movie',
-  },
-  {
-    label: 'Video Games',
-    href: '/game',
-  },
+    label: 'Blog',
+    href: '/blog'
+  }
 ];
 
 export default Header;

@@ -6,31 +6,11 @@ const typeDefs = gql`
     username: String
     email: String
     friendCount: Int
-    gameThought: [gameThought]
-    movieThought: [movieThought]
-    musicThought: [musicThought]
+    thoughts: [Thought]
     friends: [User]
   }
 
-  type gameThought {
-    _id: ID
-    thoughtText: String
-    createdAt: String
-    username: String
-    reactionCount: Int
-    reactions: [Reaction]
-  }
-
-  type movieThought {
-    _id: ID
-    thoughtText: String
-    createdAt: String
-    username: String
-    reactionCount: Int
-    reactions: [Reaction]
-  }
-
-  type musicThought {
+  type Thought {
     _id: ID
     thoughtText: String
     createdAt: String
@@ -55,21 +35,15 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    gameThoughts(username: String): [gameThought]   
-    gameThought(_id: ID!): gameThought
-    movieThoughts(username: String): [movieThought]    
-    movieThought(_id: ID!): musicThought
-    musicThoughts(username: String): [musicThought]    
-    musicThought(_id: ID!): musicThought       
+    thoughts(username: String): [Thought]
+    thought(_id: ID!): Thought
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addGameThought(thoughtText: String!): gameThought    
-    addMovieThought(movieThoughtText: String!): movieThought   
-    addMusicThought(thoughtText: String!): musicThought
-    addReaction(thoughtId: ID!, reactionBody: String!): movieThought  
+    addThought(thoughtText: String!): Thought
+    addReaction(thoughtId: ID!, reactionBody: String!): Thought
   }
 `;
 

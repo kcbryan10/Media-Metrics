@@ -24,39 +24,9 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_GAME_THOUGHT = gql`
-  mutation addGameThought($thoughtText: String!) {
-    addGameThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-      }
-    }
-  }
-`;
-
-export const ADD_MOVIE_THOUGHT = gql`
-  mutation addMovieThought($thoughtText: String!) {
-    addMovieThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-      }
-    }
-  }
-`;
-
-export const ADD_MUSIC_THOUGHT = gql`
-  mutation addMusicThought($thoughtText: String!) {
-    addMusicThought(thoughtText: $thoughtText) {
+export const ADD_THOUGHT = gql`
+  mutation addThought($thoughtText: String!) {
+    addThought(thoughtText: $thoughtText) {
       _id
       thoughtText
       createdAt
